@@ -1,0 +1,29 @@
+<!doctype html>
+<head>
+    <title>Djinn</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles.css" type="text/css">
+</head>
+
+<body>
+<div class="wrapper">
+    <main>
+        <form id="code-editor">
+            <p><label>Source<br><textarea cols="80" rows="15">
+PROGRAM hello
+BEGIN
+  print("Hello, world!")
+END
+            </textarea></label></p>
+            <p><button type="submit" class="main-button">Run</button></p>
+        </form>
+        <label>
+            Output<br>
+            <textarea disabled id="console" class="console" cols="80" rows="3" disabled>Hi!</textarea>
+        </label>
+    </main>
+    <footer class="main-footer">
+        <p><a href="https://www.github.com/belen-albeza/djinn">djinn</a> 0.0.1</p>
+    </footer>
+</div><!-- wrapper -->
+</body>

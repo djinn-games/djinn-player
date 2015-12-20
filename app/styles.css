@@ -1,0 +1,64 @@
+body {
+    font-size: 16px;
+    font-family: Courier, 'Courier New', monospace;
+    background: #fff;
+    color: #000;
+}
+
+a, a:visited {
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 2px solid #31ffd5;
+    padding: 0.1em;
+}
+
+a:hover {
+    background-color: #31ffd5;
+}
+
+p, li {
+    line-height: 1.25em;
+}
+
+textarea {
+    font-size: 1rem;
+    padding: 1em;
+}
+
+button {
+    font-size: 1rem;
+    font-family: Courier, 'Courier New', monospace;
+    border: 0;
+    padding: 0.5em 1em;
+}
+
+.wrapper {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.wrapper > main {
+    display: inline-block;
+    text-align: left;
+}
+
+.main-footer {
+    text-align: center;
+}
+
+.wrapper textarea {
+    margin-top: 0.5em;
+}
+
+.main-button {
+    width: 100%;
+    box-sizing: border-box;
+    background: #31ffd5;
+    color: #000;
+}
+
+.main-button:hover, .main-button:active {
+    background: #000;
+    color: #fff;
+}
