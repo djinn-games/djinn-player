@@ -1,0 +1,25 @@
+{
+  "name": "djinn",
+  "version": "0.0.1",
+  "description": "game development environment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/belen-albeza/djinn.git"
+  },
+  "keywords": [
+    "games",
+    "game",
+    "dev",
+    "html5"
+  ],
+  "author": "Belén \"Benko\" Albeza",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/belen-albeza/djinn/issues"
+  },
+  "homepage": "https://github.com/belen-albeza/djinn#readme"
+}
