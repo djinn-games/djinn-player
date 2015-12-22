@@ -17,8 +17,13 @@ function Editor(sourceEl, consoleEl) {
     this.sourceEl.addEventListener('submit', function (evt) {
         evt.preventDefault();
         localStorage.setItem('source', this.inputEl.value)
+        this.runProgram(this.inputEl.value)
     }.bind(this));
 }
+
+Editor.prototype.runProgram = function () {
+
+};
 
 
 module.exports = Editor;
