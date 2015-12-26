@@ -24,6 +24,7 @@ p, li {
 textarea {
     font-size: 1rem;
     padding: 1em;
+    color: #000;
 }
 
 button {
@@ -31,6 +32,8 @@ button {
     font-family: Courier, 'Courier New', monospace;
     border: 0;
     padding: 0.5em 1em;
+    background: #000;
+    color: #fff;
 }
 
 .wrapper {
@@ -58,7 +61,7 @@ button {
     color: #000;
 }
 
-.main-button:hover, .main-button:active {
+.main-button:hover, .main-button:active, button:hover, button:active {
     background: #000;
     color: #fff;
 }
