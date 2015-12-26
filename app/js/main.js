@@ -8,4 +8,4 @@ window.onload = function () {
     var editor = new Editor(
         document.getElementById('code-editor'),
         document.getElementById('console'));
-}
+};
