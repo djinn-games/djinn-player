@@ -1,3 +1,5 @@
+'use strict';
+
 let sys = {};
 
 sys.log = function (msg) {
