@@ -8,9 +8,14 @@ let VM = {};
 VM.emitter = new EventEmitter();
 
 VM.run = function (source) {
-    /*jshint -W061 */
-    eval(source);
-    /*jshint +W061 */
+    try {
+        /*jshint -W061 */
+        eval(source);
+        /*jshint +W061 */
+    }
+    catch (e) {
+        alert(e);
+    }
 };
 
 VM.on = function (evt, callback) {

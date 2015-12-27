@@ -22,8 +22,8 @@ function Editor(sourceEl, consoleEl) {
 
     this.sourceEl.addEventListener('submit', function (evt) {
         evt.preventDefault();
-        localStorage.setItem('source', this.inputEl.value)
-        this.runProgram(this.inputEl.value)
+        localStorage.setItem('source', this.inputEl.value);
+        this.runProgram(this.inputEl.value);
     }.bind(this));
 
     this.consoleEl.addEventListener('submit', function (evt) {
@@ -41,7 +41,7 @@ Editor.prototype.runProgram = function (source) {
 };
 
 Editor.prototype.logMessage = function (msg) {
-    this.outputEl.value += `${msg}\n`
+    this.outputEl.value += `${msg}\n`;
 };
 
 Editor.prototype.clearConsole = function () {
