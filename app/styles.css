@@ -29,9 +29,12 @@ textarea {
     color: #000;
 }
 
-button {
+button, textarea {
     font-size: 1rem;
     font-family: Courier, 'Courier New', monospace;
+}
+
+button {
     border: 0;
     padding: 0.5em 1em;
     background: #000;
