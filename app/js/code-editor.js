@@ -3,7 +3,7 @@ var DjinnCompiler = require('djinn-parser');
 var DEFAULT_PRG =
 `PROGRAM hello
 BEGIN
-    print("Hello, World!")
+    log("Hello, World!")
 END
 `;
 
