@@ -2,6 +2,8 @@
 
 Runtime environment for [Djinn](https://www.github.com/djinn-games).
 
+If you want to follow Djinn's development, you can see our [Trello board](https://trello.com/b/N1yrkE68).
+
 ### Development
 
 #### Include missing module: `djinn-parser`
