@@ -3,5 +3,12 @@
   "esnext": true,
   "browser": true,
   "-W014": false,
-  "devel": true
+  "devel": true,
+  "predef": [
+      "describe",
+      "it",
+      "expect",
+      "beforeEach",
+      "afterEach"
+  ]
 }
