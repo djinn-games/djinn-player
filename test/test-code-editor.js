@@ -1,7 +1,7 @@
 'use strict';
 
-describe('Another sample suite', function () {
-    it('runs a test', function () {
-        expect(2 + 2).to.equal(4);
+describe('Code editor', function () {
+    it('logs a message in output element', function () {
+        expect(true).to.be.true;
     });
 });

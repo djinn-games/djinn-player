@@ -66,6 +66,13 @@ gulp.task('connect', function () {
     });
 });
 
+gulp.task('connect:test', function () {
+    return connect.server({
+        root: ['app', '.tmp', 'test', 'node_modules'],
+        port: 3001
+    });
+});
+
 //
 // build and dist
 //
@@ -105,12 +112,17 @@ gulp.task('dev', ['watch:app', 'build'], function () {
     });
 });
 
-gulp.task('test', ['js:test'], function () {
-    return gulp.src(path.join(__dirname, 'test', 'runner.html'))
-        .pipe(mochaPhantomJS({
-            reporter: 'spec',
-            phantomjs: {useColors: true}
-        }));
+gulp.task('test', ['js:test', 'connect:test'], function () {
+    let stream = mochaPhantomJS({
+        reporter: 'spec',
+        phantomjs: { useColors: true }
+    });
+    stream.on('end', function () {
+        connect.serverClose();
+    });
+    stream.write({path: 'http://localhost:3001/runner.html'});
+    stream.end();
+    return stream;
 });
 
 gulp.task('test:browser', ['watch:test', 'watch:app', 'build', 'js:test'],

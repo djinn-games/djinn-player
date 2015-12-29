@@ -3,6 +3,7 @@
   "esnext": true,
   "browser": true,
   "-W014": false,
+  "-W030": false,
   "devel": true,
   "predef": [
       "describe",
