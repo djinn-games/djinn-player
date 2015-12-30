@@ -112,17 +112,13 @@ gulp.task('dev', ['watch:app', 'build'], function () {
     });
 });
 
-gulp.task('test', ['js:test', 'connect:test'], function () {
-    let stream = mochaPhantomJS({
-        reporter: 'spec',
-        phantomjs: { useColors: true }
-    });
-    stream.on('end', function () {
-        connect.serverClose();
-    });
-    stream.write({path: 'http://localhost:3001/runner.html'});
-    stream.end();
-    return stream;
+gulp.task('test:console', ['js:test', 'connect:test'], function () {
+    // NOTE: Disabled since phantomJS doesn't support ES6.
+    //       Also babel generates invalid syntax code for the grammar.
+    // See https://gist.github.com/belen-albeza/11d1dad3a6930345b61a
+    // for how the code should look like once phantom supports ES6
+    console.error('Disabled task – phantomJS doesn\'t support ES6');
+    connect.serverClose();
 });
 
 gulp.task('test:browser', ['watch:test', 'watch:app', 'build', 'js:test'],
