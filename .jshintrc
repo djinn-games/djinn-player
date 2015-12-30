@@ -10,6 +10,9 @@
       "it",
       "expect",
       "beforeEach",
-      "afterEach"
+      "afterEach",
+      "sandbox",
+      "sinon",
+      "chai"
   ]
 }

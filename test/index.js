@@ -1,6 +1,7 @@
 'use strict';
 
 require('./test-code-editor.js');
+require('./vm/');
 
 beforeEach(function () {
     this.root = document.createElement('div');

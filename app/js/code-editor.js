@@ -8,7 +8,7 @@ END
 `;
 
 var compiler = new DjinnCompiler();
-window.DJINN = require('./vm');
+var DJINN = require('./vm');
 
 function Editor(sourceEl, consoleEl) {
     this.sourceEl = sourceEl;

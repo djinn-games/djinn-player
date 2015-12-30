@@ -121,7 +121,7 @@ gulp.task('test:console', ['js:test', 'connect:test'], function () {
     connect.serverClose();
 });
 
-gulp.task('test:browser', ['watch:test', 'watch:app', 'build', 'js:test'],
+gulp.task('test', ['watch:test', 'watch:app', 'build', 'js:test'],
 function () {
     return browserSync.init({
         server: ['app', '.tmp', 'test', 'node_modules'],
