@@ -8,7 +8,6 @@ var gutil = require('gulp-util');
 var browserify = require('browserify');
 var watchify = require('watchify');
 var source = require('vinyl-source-stream');
-var buffer = require('vinyl-buffer');
 var browserSync = require('browser-sync');
 var exorcist = require('exorcist');
 var proxyquire = require('proxyquireify');
@@ -37,7 +36,6 @@ var bundleApp = function () {
         .on('error', gutil.log)
         .pipe(exorcist(path.join(__dirname, '.tmp', 'js', 'bundle.js.map')))
         .pipe(source('bundle.js'))
-        .pipe(buffer())
         .pipe(gulp.dest(path.join(__dirname, '.tmp', 'js')))
         .pipe(browserSync.stream({once: true}));
 };
@@ -49,7 +47,6 @@ var bundleTest = function () {
         .on('error', gutil.log)
         .pipe(exorcist(path.join(__dirname, '.tmp', 'js', 'test.js.map')))
         .pipe(source('test.js'))
-        .pipe(buffer())
         .pipe(gulp.dest(path.join(__dirname, '.tmp', 'js')))
         .pipe(browserSync.stream({once: true}));
 };

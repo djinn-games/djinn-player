@@ -35,7 +35,6 @@
     "mocha": "^2.3.4",
     "proxyquireify": "^3.0.1",
     "sinon-browser-only": "^1.12.1",
-    "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.6.1"
   },
