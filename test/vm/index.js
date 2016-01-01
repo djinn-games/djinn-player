@@ -24,6 +24,7 @@ describe('VM', function () {
            VM.on('log', spy);
 
            VM.log('Waka waka');
+
            expect(console.log.calledWith('Waka waka')).to.be.true;
            expect(spy.calledOnce).to.be.true;
         }));

@@ -1,3 +1,5 @@
+'use strict';
+
 var DjinnCompiler = require('djinn-parser');
 
 var DEFAULT_PRG =
@@ -7,10 +9,11 @@ BEGIN
 END
 `;
 
-var compiler = new DjinnCompiler();
-var DJINN = require('./vm');
+(global || window).DJINN = require('./vm');
+
 
 function Editor(sourceEl, consoleEl) {
+    this._compiler = new DjinnCompiler();
     this.sourceEl = sourceEl;
     this.consoleEl = consoleEl;
 
@@ -35,9 +38,18 @@ function Editor(sourceEl, consoleEl) {
 }
 
 Editor.prototype.runProgram = function (source) {
-    var jsCode = compiler.compile(source);
     this.clearConsole();
-    DJINN.run(jsCode);
+
+    let jsCode = '';
+    try {
+        jsCode = this._compiler.compile(source);
+    }
+    catch (err) {
+        console.log(err);
+        this.logMessage(err.toString());
+    }
+
+    if (jsCode) { DJINN.run(jsCode); }
 };
 
 Editor.prototype.logMessage = function (msg) {

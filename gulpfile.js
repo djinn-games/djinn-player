@@ -11,6 +11,7 @@ var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
 var browserSync = require('browser-sync');
 var exorcist = require('exorcist');
+var proxyquire = require('proxyquireify');
 
 var mochaPhantomJS = require('gulp-mocha-phantomjs');
 
@@ -43,6 +44,7 @@ var bundleApp = function () {
 
 var bundleTest = function () {
     return bundlerTest
+        .plugin(proxyquire.plugin)
         .bundle()
         .on('error', gutil.log)
         .pipe(exorcist(path.join(__dirname, '.tmp', 'js', 'test.js.map')))

@@ -1,8 +1,11 @@
-'use strict';
+var proxiquire = require('proxyquireify')(require);
 
-var Editor = require('../app/js/code-editor.js');
+var Editor = proxiquire('../app/js/code-editor.js', {
+    'djinn-parser': function CompilerStub () {}
+});
 
 describe('Code editor', function () {
+    'use strict';
     beforeEach(function () {
         // create editor DOM
         let editorEl = document.createElement('div');
@@ -39,5 +42,14 @@ describe('Code editor', function () {
         this.editor.inputEl.value = '';
         let editor = new Editor(this.editor.sourceEl, this.editor.consoleEl);
         expect(editor.inputEl.value).to.equal('Waka waka');
+    }));
+
+    it('logs compiler errors', sinon.test(function () {
+        this.stub(this.editor._compiler, 'compile').throws('Line 42 random error');
+        let spy = this.spy(this.editor, 'logMessage');
+
+        this.editor.runProgram('');
+        expect(spy.calledOnce).to.be.true;
+        expect(spy.calledWith(sinon.match(/line 42/i))).to.be.true;
     }));
 });
