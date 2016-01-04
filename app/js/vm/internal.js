@@ -10,5 +10,6 @@ internal.__checkDivByZero = function (x) {
     return x;
 };
 
+// variables
 
 module.exports = internal;

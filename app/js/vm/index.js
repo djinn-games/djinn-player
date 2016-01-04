@@ -7,6 +7,8 @@ let VM = {};
 
 VM.emitter = new EventEmitter();
 
+VM.__scope = {}; // TODO: proper scope handling
+
 VM.run = function (source) {
     try {
         /*jshint -W061 */
